@@ -1,0 +1,26 @@
+.title {
+  display: grid;
+  gap: 16px;
+  justify-content: center;
+}
+.title--small {
+  display: flex;
+  justify-content: start;
+}
+
+.title__heading {
+  color: #121212;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+.title__heading--small {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.title__description {
+  color: #939199;
+  font-size: 14px;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

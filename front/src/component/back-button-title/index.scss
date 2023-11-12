@@ -1,0 +1,11 @@
+.back-header {
+    display: flex;
+    align-items: center;
+
+    &__title{
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+    }
+}

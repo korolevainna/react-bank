@@ -1,0 +1,25 @@
+.statusbar {
+    /* border-bottom: 1px solid #363bc6; */
+    padding: 0px 0 20px 0px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .statusbar__info {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .statusbar__time {
+    color: #000;
+    font-weight: bold;
+    font-size: 16px;
+  
+    &--white{
+      color: #fff;
+    font-weight: bold;
+  
+    }
+    
+  }

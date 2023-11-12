@@ -1,0 +1,29 @@
+.header {
+    display: grid;
+    grid-template-columns: 24px 1fr 24px;
+    justify-content: center;
+    align-items: center;
+  
+    &__title{
+      color: #fff;
+      text-align: center;
+    }
+  
+    &__setting{
+      background-image: url(./svg/setting.svg);
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      // cursor: pointer;
+  
+      
+    }
+  
+    &__notifications{
+      background-image: url(./svg/notifications.svg);
+      width: 24px;
+      height: 24px;
+      background-repeat: no-repeat;
+      // cursor: pointer;
+    }
+  }

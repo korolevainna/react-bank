@@ -1,0 +1,18 @@
+.button {
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #fff;
+}
+.button--primary {
+  background-color: #775ce5;
+}
+.button--outline {
+  border: 1px solid #775ce5;
+  color: #775ce5;
+}
+.button--outline--danger {
+  border: 1px solid red;
+  color: red;
+}/*# sourceMappingURL=index.css.map */

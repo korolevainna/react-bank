@@ -1,0 +1,12 @@
+.statusbar {
+    /* border-bottom: 1px solid #363bc6; */
+    padding: 0px 10px 20px 10px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .statusbar__info {
+    display: flex;
+    gap: 4px;
+  }

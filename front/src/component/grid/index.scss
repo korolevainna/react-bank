@@ -1,0 +1,14 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+
+
+    &__small {
+        gap: 10px;
+        padding: 2px;
+      }
+  }
+  
+ 

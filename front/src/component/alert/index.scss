@@ -1,0 +1,25 @@
+.alert {
+  background-color: #775ce5;
+  border: 1px solid #775ce5; 
+  max-width: 100%;
+  min-height: 56px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 14px;
+  color: #0c0c0c;
+
+  &--success {
+    background-color: rgb(170, 237, 170);
+    border: 1px solid rgb(170, 237, 170); 
+  }
+  
+  &--error {
+    background-color: #f2883d26;
+    color: #f2883d;
+    border: none; 
+  }
+}

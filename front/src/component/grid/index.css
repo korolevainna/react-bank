@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.grid__small {
+  gap: 10px;
+  padding: 2px;
+}/*# sourceMappingURL=index.css.map */

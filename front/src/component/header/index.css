@@ -1,0 +1,22 @@
+.header {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  justify-content: center;
+  align-items: center;
+}
+.header__title {
+  color: #fff;
+  text-align: center;
+}
+.header__setting {
+  background-image: url(./svg/setting.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}
+.header__notifications {
+  background-image: url(./svg/notifications.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=index.css.map */

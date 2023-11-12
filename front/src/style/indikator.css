@@ -1,0 +1,7 @@
+.indikator {
+  width: 150px;
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 75px);
+  border-radius: 5px;
+}/*# sourceMappingURL=indikator.css.map */

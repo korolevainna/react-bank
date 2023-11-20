@@ -7,20 +7,17 @@ const { Confirm } = require('../class/confirm')
 const { Session } = require('../class/session')
 const { NOTIFICATION_TYPE } = require('../data/const')
 
-//==========================================
-
-// Створимо користувача для зручності тестування
 User.create({
-  email: 'test5@gmail.com',
-  password: 'qwe123QWE',
+  email: 'test23@gmail.com',
+  password: '123asdASD',
 })
 User.create({
-  email: 'test4@gmail.com',
-  password: 'qwe123QWE',
+  email: 'test43@gmail.com',
+  password: '123qweASD',
 })
 User.create({
-  email: 'test3@gmail.com',
-  password: 'qwe123QWE',
+  email: 'test33@gmail.com',
+  password: '123asdASDE',
 })
 
 //============== ↙️ Sign Up ================================
@@ -39,39 +36,31 @@ router.post('/signup', function (req, res) {
     })
   }
 
-  // дальше заходим в try для отслеживание ошибок в процессе работы приложения
   try {
-    //Проверка есть ли пользователь с таким email  в базе
-    //Функцию getByEmail достаем из класса User
     const user = User.getByEmail(email)
 
     // console.log(user) //OK!
 
-    //Проверка, если такой пользователь уже есть, то ошибка
     if (user) {
       return res.status(400).json({
         message: 'Такий користувач вже існує',
       })
     }
-    //Если email в базе нет, то создаем нового пользователя
-    //функция create из класса User
+   
     const newUser = User.create({ email, password })
 
     // console.log(newUser) //OK!
 
-    //Функция создания уведомлений
-    // класс Notifications
-    // внутри класса Notifications функция createNotification для уведомлений
+   
     Notifications.createNotification({
       userId: newUser.id,
       type: NOTIFICATION_TYPE.ANNOUNCEMENT,
       message: 'Створено новий акаунт',
     })
 
-    //Session - класс сессии с функцией создания токена
+  
     const session = Session.create(newUser)
 
-    //Confirm - Класс для создания и контроля кода
     Confirm.create(email)
     // console.log('Your code====>>>', Confirm.generateCode())
 
@@ -114,7 +103,7 @@ router.post('/signup-confirm', function (req, res) {
     const email = Confirm.getData(code)
     if (!email) {
       return res.status(400).json({
-        message: 'Не вірний код',
+        message: 'Невірний код',
       })
     }
 
@@ -142,7 +131,6 @@ router.post('/signup-confirm', function (req, res) {
 //==================== SignIn =================
 
 router.post('/signin', function (req, res) {
-  //....
   const { email, password } = req.body
 
   // console.log(email, password) // OK!
@@ -192,31 +180,25 @@ router.post('/signin', function (req, res) {
   }
 })
 
-//============== ↙️ Recovery ================================
+//==============================================
 
 router.post('/recovery', function (req, res) {
-  // получаю email, password из frontend
 
   const { email } = req.body
 
   // console.log(email) // OK!
 
-  //Проверка, если нет одного из, то ошибка
   if (!email) {
     return res.status(400).json({
       message: 'Помилка. Обовязкові поля відсутні',
     })
   }
 
-  // дальше заходим в try для отслеживание ошибок в процессе работы приложения
   try {
-    //Проверка есть ли пользователь с таким email  в базе
-    //Функцию getByEmail достаем из класса User
     const user = User.getByEmail(email)
 
     // console.log(user) //OK!
 
-    //Проверка, если такой пользователь уже есть, то ошибка
     if (!user) {
       return res.status(400).json({
         message:
@@ -226,7 +208,6 @@ router.post('/recovery', function (req, res) {
 
     Session.create(user)
 
-    //Confirm - Класс для создания и контроля кода
     Confirm.create(email)
     // console.log('Code =====>>>>', Confirm.getCode())
 
@@ -241,13 +222,12 @@ router.post('/recovery', function (req, res) {
   }
 })
 
-//================== Recovery-confirm ===================
+//=====================================
 router.post('/recovery-confirm', function (req, res) {
   const { code, password } = req.body
 
   // console.log(code, password) // OK!
 
-  //Проверка, если нет одного из, то ошибка
   if (!code || !password) {
     return res.status(400).json({
       message: 'Помилка. Обовязкові поля відсутні',
@@ -276,7 +256,7 @@ router.post('/recovery-confirm', function (req, res) {
     const session = Session.create(user)
 
     return res.status(200).json({
-      message: 'Ваш паспорт поновлено',
+      message: 'Ваш код поновлено',
       session,
     })
   } catch (error) {

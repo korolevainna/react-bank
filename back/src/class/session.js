@@ -27,8 +27,7 @@ class Session {
   
       return result
     }
-  
-    //Создания функции сессии с токеном
+
     static create = (user) => {
       const session = new Session(user)
   

@@ -6,24 +6,24 @@ class Confirm {
       this.data = data
     }
   
-    //Генерация кода
+  
     static generateCode = () =>
       Math.floor(Math.random() * 9000) + 1000
   
     static create = (data) => {
       this.#list.push(new Confirm(data))
   
-      //код действителен 24 часа
+      
       setTimeout(() => {
         this.delete(code)
       }, 24 * 60 * 60 * 1000) // 24 години у мілісекундах
   
       console.log('list---->', this.#list)
   
-      //Confirm { code: 9478, data: 'test6@gmail.com' }
+      //Confirm { code: 2305, data: 'test66@gmail.com' }
     }
   
-    //удаление кода из списка
+    
     static delete = (code) => {
       const length = this.#list.length
   
@@ -33,8 +33,7 @@ class Confirm {
   
       return length > this.#list.length
     }
-    //получить код и сравнить с кодом в списке
-    //если сходиться то выдать его, если нет то null
+ l
     static getData = (code) => {
       const obj = this.#list.find(
         (item) => item.code === Number(code),
@@ -52,7 +51,4 @@ class Confirm {
     }
   }
   
-  module.exports = {
-    Confirm,
-  }
-  // console.log('Your code -->', Confirm.create())
+  module.exports = { Confirm }

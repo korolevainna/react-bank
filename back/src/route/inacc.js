@@ -27,7 +27,6 @@ const { Transactions } = require('../class/transaction')
 //============== ↙️ setting-email ================================
 
 router.post('/settings-email', function (req, res) {
-  // получаю newEmail, email, password из frontend
 
   const { newEmail, email, password } = req.body
 
@@ -74,7 +73,6 @@ router.post('/settings-email', function (req, res) {
 
 //==========================================
 router.post('/settings-pass', function (req, res) {
-  // получаю newEmail, email, password из frontend
 
   const { email, password, newPassword } = req.body
 
@@ -120,7 +118,7 @@ router.post('/settings-pass', function (req, res) {
   }
 })
 
-//=========== Balance ================
+//===========================
 router.post('/balance', function (req, res) {
   const { userId } = req.body
 
@@ -133,7 +131,6 @@ router.post('/balance', function (req, res) {
   }
 
   try {
-    // Достаем объект пользователя с заданым id
     const user = User.getById(Number(userId))
 
     const transactions =
@@ -188,7 +185,7 @@ router.post('/recive', function (req, res) {
   }
 })
 
-//===================== sendPage =====
+//===================== =========================
 router.post('/send', function (req, res) {
   const { sum, email, payTo } = req.body
 
@@ -224,7 +221,7 @@ router.post('/send', function (req, res) {
   }
 })
 
-//====================
+//=======================================================
 
 router.get('/transaction/:id', function (req, res) {
   const { id } = req.params
@@ -253,7 +250,7 @@ router.get('/transaction/:id', function (req, res) {
   }
 })
 
-//======================================
+//===========================================================
 
 router.post('/notifications', function (req, res) {
   const { userId } = req.body

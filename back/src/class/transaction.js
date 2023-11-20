@@ -5,7 +5,7 @@ class Transactions {
   static #list = []
   static #count = 1
 
-  //функция которая создает  все данные для транзакции
+
   static createTransaction = ({
     date,
     userId,
@@ -32,7 +32,6 @@ class Transactions {
     return transaction
   }
 
-  // ==========Получить список транзакций
   static getAllTransactions = () => {
     return this.#list
   }
@@ -57,8 +56,6 @@ class Transactions {
     return userTransactions
   }
 
-  //===============Получить деньги=========
-
   static receiveMoney = (user, amount, paySys) => {
     const date = new Date()
     Transactions.createTransaction({
@@ -71,7 +68,7 @@ class Transactions {
       amount: amount,
       paySys,
     })
-    // Добавить уведомление получении====================
+
 
     Notifications.createNotification({
       userId: user.id,
@@ -79,11 +76,10 @@ class Transactions {
       message: 'Cash receipts',
     })
   }
-  //============Отправим денги=============
+ 
   static sendMoney = (user, amount, userPayTo) => {
     const date = new Date()
 
-    // списаниe с user
     Transactions.createTransaction({
       date,
       userId: user.id,
@@ -95,7 +91,7 @@ class Transactions {
       paymentSystem: 'User',
     })
 
-    // добавление к userPayTo
+ 
     Transactions.createTransaction({
       date,
       userIdPayTo: userPayTo.id,
@@ -107,7 +103,7 @@ class Transactions {
       paymentSystem: 'User',
     })
 
-    // Добавить уведомление ============================
+
 
     Notifications.createNotification({
       userId: user.id,
@@ -115,7 +111,6 @@ class Transactions {
       message: 'Spending of money',
     })
 
-    // =========================================
   }
   static getTransactionById = (transactionId) => {
     const transaction = this.#list.find(

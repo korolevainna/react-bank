@@ -18,11 +18,9 @@ import {
 } from "../../data/const";
 import { reducer, initialState, ACTION_TYPE } from "../../util/reducer";
 
-//======== const ========
-
 const { NEW_EMAIL, PASSWORD, EMAIL } = NAME_FIELD;
 
-//========  EmailChangeForm  ===============
+//=======================
 export const EmailChangeForm: React.FC = () => {
   const auth = useContext(AuthContext);
 
@@ -31,7 +29,6 @@ export const EmailChangeForm: React.FC = () => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //===== получаю данные из инпута =====
 
   const handleInputChange = (name: string, value: string) => {
     // console.log(name, value);
@@ -43,7 +40,7 @@ export const EmailChangeForm: React.FC = () => {
       },
     });
   };
-  //========== Проверяю данные из инпута =======
+ 
   const validate = () => {
     const { newEmail, password } = state.formValues;
 
@@ -69,13 +66,13 @@ export const EmailChangeForm: React.FC = () => {
 
     return Object.values(err).every((err) => !err);
   };
-  //======== кнопкой направляю на функцию отправки данных на сервер ======
+
   const handleSubmit = () => {
     const checkValidate = validate();
     if (checkValidate) sendChangeEmail();
   };
 
-  // ====== конвертирую данные ========
+
   const convertChangeEmail = () => {
     return JSON.stringify({
       [NEW_EMAIL]: state.formValues[NEW_EMAIL],
@@ -86,7 +83,6 @@ export const EmailChangeForm: React.FC = () => {
     });
   };
 
-  // ======= отправляю данные на сервер и получаю обратно =======
   const sendChangeEmail = async () => {
     try {
       const res = await fetch(`http://localhost:4000/settings-email`, {

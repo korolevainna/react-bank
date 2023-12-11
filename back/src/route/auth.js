@@ -7,6 +7,8 @@ const { Confirm } = require('../class/confirm')
 const { Session } = require('../class/session')
 const { NOTIFICATION_TYPE } = require('../data/const')
 
+// ==================================================
+
 User.create({
   email: 'test23@gmail.com',
   password: '123asdASD',
@@ -20,16 +22,14 @@ User.create({
   password: '123asdASDE',
 })
 
-//============== ↙️ Sign Up ================================
+//==============================================
 
 router.post('/signup', function (req, res) {
-  // получаю email, password из frontend
 
   const { email, password } = req.body
 
   // console.log(email, password)
 
-  //Проверка, если нет одного из, то ошибка
   if (!email || !password) {
     return res.status(400).json({
       message: 'Помилка. Обовязкові поля відсутні',
@@ -83,7 +83,6 @@ router.post('/signup-confirm', function (req, res) {
 
   // console.log(code, token) // OK!
 
-  //Проверка, если нет одного из, то ошибка
   if (!code || !token) {
     return res.status(400).json({
       message: 'Помилка. Обовязкові поля відсутні',
@@ -238,7 +237,7 @@ router.post('/recovery-confirm', function (req, res) {
     const email = Confirm.getData(Number(code))
     if (!email) {
       return res.status(400).json({
-        message: 'Не вірний код',
+        message: 'НЕ вірний код',
       })
     }
 
@@ -259,11 +258,12 @@ router.post('/recovery-confirm', function (req, res) {
       message: 'Ваш код поновлено',
       session,
     })
+
   } catch (error) {
     return res.status(400).json({
       message: error.message,
     })
   }
 })
-//=====================
+
 module.exports = router

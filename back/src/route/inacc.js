@@ -24,7 +24,7 @@ const { Transactions } = require('../class/transaction')
 //   password: 'qwe123QWE',
 // })
 
-//============== ↙️ setting-email ================================
+//==============  setting-email ================================
 
 router.post('/settings-email', function (req, res) {
 
@@ -283,5 +283,5 @@ router.post('/notifications', function (req, res) {
     })
   }
 })
-//=====================
+
 module.exports = router

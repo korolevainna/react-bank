@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Heading from "../../component/heading";
 import StatusBarWhite from "../../component/statusbar-white";
 import Button from "../../component/button";
-//import Page from "../../component/page";
+import Page from "../../component/page";
 
 import Kerfin from "./img/kerfin.png";
 import Indikator from "./img/indikator.svg";

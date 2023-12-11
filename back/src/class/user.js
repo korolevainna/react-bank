@@ -81,5 +81,7 @@ class User {
       return false
     }
   }
-  console.log('====>', User.getList())
+  
+ console.log('====>', User.getList())
+  
 module.exports = { User, }

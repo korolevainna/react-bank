@@ -10,7 +10,6 @@ class Session {
       }
     }
   
-    //Генерация токена
     static generateCode = () => {
       const length = 6
       const characters =
@@ -45,6 +44,4 @@ class Session {
     }
   }
   
-  module.exports = {
-    Session,
-  }
+  module.exports = { Session, }

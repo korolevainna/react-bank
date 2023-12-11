@@ -67,17 +67,10 @@ router.get('/', function (req, res) {
 //   // ↑↑ сюди вводимо JSON дані
 // })
 
-// Підключіть файли роутів
 const auth = require('./auth')
 const inacc = require('./inacc')
 
-// Підключіть інші файли роутів, якщо є
-
-// Об'єднайте файли роутів за потреби
 router.use('/', auth)
 router.use('/', inacc)
 
-// Використовуйте інші файли роутів, якщо є
-
-// Експортуємо глобальний роутер
 module.exports = router

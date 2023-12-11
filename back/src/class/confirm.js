@@ -16,7 +16,7 @@ class Confirm {
       
       setTimeout(() => {
         this.delete(code)
-      }, 24 * 60 * 60 * 1000) // 24 години у мілісекундах
+      }, 24 * 60 * 60 * 1000) 
   
       console.log('list---->', this.#list)
   
@@ -51,4 +51,4 @@ class Confirm {
     }
   }
   
-  module.exports = { Confirm }
+  module.exports = { Confirm, }

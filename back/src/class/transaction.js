@@ -120,6 +120,4 @@ class Transactions {
   }
 }
 
-module.exports = {
-  Transactions,
-}
+module.exports = { Transactions,}

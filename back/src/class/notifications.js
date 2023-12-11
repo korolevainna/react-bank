@@ -31,4 +31,4 @@ class Notifications {
     static getByNotif = this.#list
   }
   
-  module.exports = { Notifications }
+  module.exports = { Notifications, }

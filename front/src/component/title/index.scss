@@ -9,21 +9,20 @@
     }
   }
   
-  .title__heading {
-    color: #121212;
-    font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-  
-    &--small{
-      font-size: 16px;
-      font-weight: 500;
-    }
+.title__heading {
+  color: #121212;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+
+  &--small{
+    font-size: 16px;
+    font-weight: 500;
   }
-  
-  .title__description {
-    color: #939199;
-    font-size: 14px;
-    text-align: center;
-  
-  }
+}
+
+.title__description {
+  color: #939199;
+  font-size: 14px;
+  text-align: center;
+}
